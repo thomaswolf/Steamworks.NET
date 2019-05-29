@@ -819,9 +819,9 @@ namespace Steamworks {
 			return NativeMethods.ISteamParties_GetNumAvailableBeaconLocations(CSteamAPIContext.GetSteamParties(), out puNumLocations);
 		}
 
-		public static bool GetAvailableBeaconLocations(out SteamPartyBeaconLocation_t pLocationList, uint uMaxNumLocations) {
+		public static bool GetAvailableBeaconLocations(IntPtr pLocationList, uint uMaxNumLocations) {
 			InteropHelp.TestIfAvailableClient();
-			return NativeMethods.ISteamParties_GetAvailableBeaconLocations(CSteamAPIContext.GetSteamParties(), out pLocationList, uMaxNumLocations);
+			return NativeMethods.ISteamParties_GetAvailableBeaconLocations(CSteamAPIContext.GetSteamParties(), pLocationList, uMaxNumLocations);
 		}
 
 		/// <summary>

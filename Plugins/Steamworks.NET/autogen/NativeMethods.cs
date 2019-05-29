@@ -1636,7 +1636,8 @@ namespace Steamworks {
 
 		[DllImport(NativeLibraryName, EntryPoint = "SteamAPI_ISteamParties_GetAvailableBeaconLocations", CallingConvention = CallingConvention.Cdecl)]
 		[return: MarshalAs(UnmanagedType.I1)]
-		public static extern bool ISteamParties_GetAvailableBeaconLocations(IntPtr instancePtr, out SteamPartyBeaconLocation_t pLocationList, uint uMaxNumLocations);
+		//public static extern bool ISteamParties_GetAvailableBeaconLocations(IntPtr instancePtr, out SteamPartyBeaconLocation_t pLocationList, uint uMaxNumLocations);
+		public static extern bool ISteamParties_GetAvailableBeaconLocations(IntPtr instancePtr, IntPtr pLocationList, uint uMaxNumLocations);
 
 		[DllImport(NativeLibraryName, EntryPoint = "SteamAPI_ISteamParties_CreateBeacon", CallingConvention = CallingConvention.Cdecl)]
 		public static extern ulong ISteamParties_CreateBeacon(IntPtr instancePtr, uint unOpenSlots, out SteamPartyBeaconLocation_t pBeaconLocation, InteropHelp.UTF8StringHandle pchConnectString, InteropHelp.UTF8StringHandle pchMetadata);
